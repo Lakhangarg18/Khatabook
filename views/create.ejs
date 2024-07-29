@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khataabook</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex justify-between items-center p-4 bg-white shadow-md">
+      <h1 class="text-lg font-bold">Khataabook</h1>
+      <nav class="flex space-x-4">
+        <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
+        <a href="/create" class="text-gray-600 hover:text-gray-800"
+          >Create New Hisaab</a
+        >
+      </nav>
+    </div>
+
+    <div class="flex justify-center mt-8">
+      <div class="w-2/3 bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Create New Hisaab</h2>
+        <form action="/createhissab" method="post">
+          <input
+            name="title"
+            type="text"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg placeholder-gray-500"
+            placeholder="Shopping ka hisaab, ghar ka kharch..."
+          />
+          <textarea
+            name="content"
+            class="w-full h-48 p-3 border border-gray-300 rounded-lg placeholder-gray-500"
+            placeholder="write your hisaab."
+          ></textarea>
+          <button
+            name="submit"
+            class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+          >
+            Create Hisaab
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khataabook</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="flex justify-between items-center p-4 bg-white shadow-md">
+        <h1 class="text-lg font-bold">Khataabook</h1>
+        <nav class="flex space-x-4">
+            <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
+            <a href="/create" class="text-gray-600 hover:text-gray-800">Create New Hisaab</a>
+        </nav>
+    </div>
+
+    <div class="flex flex-col space-y-4 ml-4 justify-center mt-8">
+        <% if(files.length>0){%>
+          <% files.forEach((file)=>{%>
+            <div class="bg-white p-6 rounded-lg shadow-lg w-64  justify-center">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-bold text-blue-600 flex items-center">
+                        <%= file.split(".")[0]  %>
+                        <a href="/edit/<%=file%>" class="text-gray-500 hover:text-gray-700 ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M17.414 2.586a2 2 0 00-2.828 0L14 3.172 16.828 6l.586-.586a2 2 0 000-2.828zM13 4.586L3.707 13.879A1 1 0 003.293 15h3.172a1 1 0 00.707-.293L15.414 6.828 13 4.586zM2 18h12v-2H4a1 1 0 00-1 1v1H2v-2z"/>
+                            </svg>
+                        </a>
+                    </span>
+                    <div class="flex space-x-2">
+                        <a href="./hisaab/<%=file%>" class="text-gray-500 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011.707-.707l5 5a1 1 0 010 1.414l-5 5A1 1 0 0110 15v-3H3a1 1 0 110-2h7V5z" clip-rule="evenodd" />
+                              </svg>
+                              
+                        </a>
+                        <a href="./delete/<%= file %>" class="text-red-500 hover:text-red-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+
+          <%}) %>
+          
+
+
+        <%}else{%>
+          <h3>No Hissab currently been made.</h3>
+
+        <%} %>
+       
+    </div>
+</body>
+</html>
